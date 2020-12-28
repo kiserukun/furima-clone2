@@ -57,7 +57,34 @@
 .lists-left {
   display: flex;
   min-width: 200px;
+  position: relative;
+}
 
+.lists-left li > ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  height: 0;
+  overflow: hidden;
+}
+
+.lists-left li > ul > li > a {
+  padding: 5%;
+  color: #000;
+  display: block;
+}
+
+.lists-left li > ul > li > a:hover {
+  background-color: #3ccace;
+  color: #fff;
+}
+
+.lists-left li:hover > ul {
+  height: auto;
+  overflow: visible;
+  border: 1px solid #eee;
 }
 
 .category-list {

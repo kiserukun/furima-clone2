@@ -11,7 +11,20 @@
   </div>
   <div class='nav'>
     <ul class='lists-left'>
-      <li><%= link_to 'カテゴリー', "#", class: "category-list" %></li>
+      <li>
+        <%= link_to 'カテゴリー', "https://www.google.com/?hl=ja", class: "category-list" %>
+        <ul>
+          <li><%= link_to 'メンズ', "#"%></li>
+          <li><%= link_to 'レディース', "#"%></li>
+          <li><%= link_to '家電＆カメラ', "#"%></li>
+          <li><%= link_to 'ホーム＆家電', "#"%></li>
+          <li><%= link_to 'ペット用品', "#"%></li>
+          <li><%= link_to 'おもちゃ＆ホビー', "#"%></li>
+          <li><%= link_to 'スポーツ', "#"%></li>
+          <li><%= link_to '楽器', "#"%></li>
+          <li><%= link_to 'その他', "#"%></li>
+        </ul>
+      </li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <% if user_signed_in? %>
