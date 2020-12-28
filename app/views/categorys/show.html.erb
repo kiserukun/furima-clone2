@@ -1,0 +1,9 @@
+<%= render "shared/header" %>
+
+<p><%= "#{@category.name}の商品一覧" %></p>
+
+<% @category_items.each do |category_item| %>
+  <%= category_item.name %>
+  <%= category_item.description %>
+  <%= category_item.price %>
+<% end %>
