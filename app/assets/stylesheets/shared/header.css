@@ -68,6 +68,7 @@
   background-color: #ffffff;
   height: 0;
   overflow: hidden;
+  z-index: 20;
 }
 
 .lists-left li > ul > li > a {
