@@ -1,3 +1,39 @@
 // Place all the styles related to the categorys controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.category-content {
+  background-color: #FFF;
+  width: 60%;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10vh 0;
+}
+
+.category-content>.title {
+  font-size: 5vh;
+  line-height: 1.4;
+  font-weight: bold;
+}
+
+.category-nav {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+}
+
+.category-link a {
+  display: block;
+  color: #000;
+  padding: 10px 50px;
+  border: 1px solid gray;
+  margin: 5px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px gray;
+}
+
+.category-link a:hover {
+  color: #fff;
+  background-color: #3ccace;
+  box-shadow: none;
+}
