@@ -90,8 +90,9 @@
         <span>コメントする<span>
       <% end %>
     <% end %>
-    <% @comments.each do |comment|%>
-    <p><%= comment.text %></p>
+    <% @comments.reverse.each do |comment|%>
+    <p><%= link_to comment.user.nickname, "#" %> :
+   <%= comment.text %></p>
     <% end %>
   </div>
   <div class="links">
