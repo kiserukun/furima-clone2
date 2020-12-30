@@ -1,0 +1,56 @@
+<%= render "shared/header" %>
+
+<div class='item-contents'>
+    <h2 class='title'><%= "#{@category.name}の商品一覧" %></h2>
+    <ul class='item-lists'>
+      <% @category_items.each do |category_item| %>
+        <li class='list'>
+          <%= link_to item_path(category_item.id) do %>
+            <div class='item-img-content'>
+              <%= image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg", class: "item-img" %>
+                <%# SoldOut表示、動作確認未実施 %>
+                <% if category_item.history != nil %>
+                  <div class='sold-out'>
+                    <span>Sold Out!!</span>
+                  </div>
+                <% end %>
+                <%# SoldOut表示 %>
+            </div>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                <%= category_item.name %>
+              </h3>
+              <div class='item-price'>
+                <span><%= category_item.price %>円<br><%= '配送料負担' %></span>
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+
+      <% if @category_items.size == 0 %>
+        <li class='list'>
+          <%= link_to '#' do %>
+            <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
+            <div class='item-info'>
+              <h3 class='item-name'>
+                商品を出品してね！
+              </h3>
+              <div class='item-price'>
+                <span>99999999円<br>(税込み)</span>
+                <div class='star-btn'>
+                  <%= image_tag "star.png", class:"star-icon" %>
+                  <span class='star-count'>0</span>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </li>
+      <% end %>
+
+    </ul>
+  </div>
