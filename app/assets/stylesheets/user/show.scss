@@ -1,0 +1,88 @@
+.user-content {
+  height: auto;
+  width: 100%;
+  background-color: #eee;
+}
+
+.user-show {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.user-data {
+  height: 30vh;
+  margin-bottom: 10vh;
+  position: relative;
+}
+
+.user-background {
+  padding-top: 5vh;
+  object-fit: cover;
+}
+
+.user-data > p {
+  position: absolute;
+  top: 100%;
+  left: 15%;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.user-icon {
+  position: absolute;
+  top: 70%;
+  left: 3%;
+  height: auto;
+  width: 10%;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.user-show-info {
+  display: flex;
+  padding-bottom: 5vh;
+}
+
+.user-profile {
+  padding: 0 2vw;
+}
+
+.user-show-left {
+  padding: 0 3vw 0 0;
+  width: 22%;
+  box-sizing: content-box;
+}
+
+.user-profile {
+  min-height: 30vh;
+  border: 1px solid #acacac;
+  background-color: #fff;
+}
+
+.user-profile-title {
+  padding: 15px 0;
+  border-bottom: 1px solid #acacac;
+  font-weight: bold;
+}
+
+.user-profile-text {
+  padding: 20px 0;
+}
+
+.user-show-light {
+  border: 1px solid #acacac;
+  background-color: #fff;
+  width: 78%;
+}
+
+.user-item {
+  padding: 0 2vw;
+}
+
+.user-item > .item-contents {
+  padding: 2vh 0;
+}
+
+.user-item > .item-contents > .item-lists {
+  width: 100%;
+}

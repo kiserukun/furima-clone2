@@ -1,0 +1,70 @@
+<%= render "shared/header" %>
+
+<div class='user-content'>
+  <div class='user-show'>
+    <div class='user-data'>
+      <%= image_tag 'furima-header01.png', width: '100%', height: '100%', class: 'user-background' %>
+      <%= image_tag 'user_icon.png', class: 'user-icon' %>
+      <p><%= "#{@user.nickname}さんのマイページ" %></p>
+    </div>
+    <div class='user-show-info'>
+      <div class='user-show-left'>
+        <div class='user-profile'>
+          <p class='user-profile-title'>プロフィール</p>
+          <p class='user-profile-text'>
+            ここにプロフィールを登録します。
+            ユーザー編集画面にて登録できるように実装予定です。
+            また、ユーザーのプロフィール画像をアップロードできるように実装も行います。
+          </p>
+        </div>
+      </div>
+      <div class='user-show-light'>
+        <div class='user-item'>
+          <p class='user-profile-title'><%= "#{@user.nickname}さんの商品一覧" %></p>
+
+          <div class='item-contents'>
+            <ul class='item-lists'>
+            <% @user.items.each do |item| %>
+              <li class='list'>
+                <%= link_to item_path(item.id) do %>
+                <div class='item-img-content'>
+                  <%= image_tag item.image, class: "item-img" %>
+
+                  <% if item.history != nil %>
+                  <div class='sold-out'>
+                    <span>Sold Out!!</span>
+                  </div>
+                  <% end %>
+
+                </div>
+                <div class='item-info'>
+                  <h3 class='item-name'>
+                    <%= item.name %>
+                  </h3>
+                  <div class='item-price'>
+                    <span><%= item.price %>円<br><%= item.fee.name %></span>
+                    <div class='star-btn'>
+                      <%= image_tag "star.png", class:"star-icon" %>
+                      <span class='star-count'>0</span>
+                    </div>
+                  </div>
+                </div>
+                <% end %>
+              </li>
+            <% end %>
+
+            <% if @user.items.size == 0 %>
+              <p class='user-item-nil'>＊＊＊ 出品中の商品がありません ＊＊＊</p>
+            <% end %>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%= link_to(new_item_path, class: 'purchase-btn') do %>
+  <span class='purchase-btn-text'>出品する</span>
+  <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+<% end %>
