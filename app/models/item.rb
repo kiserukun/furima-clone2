@@ -32,12 +32,6 @@ class Item < ApplicationRecord
   with_options numericality: { greater_than: 299, less_than: 10_000_000 } do
     validates :price
   end
-
-  def previous
-    items.order('published_at desc, id desc').where('published_at <= ? and id < ?', published_at, id).first
-  end
-
-  def next
-    items.order('published_at desc, id desc').where('published_at >= ? and id > ?', published, id).reverse.first
-  end  
+  
+  
 end
