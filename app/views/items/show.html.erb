@@ -76,7 +76,7 @@
     </div>
   </div>
   <%# /商品の概要 %>
-
+<% if current_user.id == @item.user.id || @item.history != nil %>
   <div class="comment-box">
     <%= form_with(model: [@item, @comment], local: true) do |f| %>
       <%= f.text_area :text, class:"comment-text", placeholder: "コメントする", rows: "2" %>
@@ -95,6 +95,7 @@
    <%= comment.text %></p>
     <% end %>
   </div>
+  <% end %>
   <% if @item.previous.present? %>
   <div class="links">
     <%= link_to "＜ 前の商品", item_path(@item.previous), class: "change-item-btn"%>
