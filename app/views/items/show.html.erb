@@ -98,10 +98,10 @@
   <% end %>
   <div class="links">
     <% if @item.previous.present? %>
-    <%= link_to "＜ 前の商品", item_path(@item.previous), class: "change-item-btn"%>
+    <%= link_to "＜ 後ろの商品", item_path(@item.previous), class: "change-item-btn"%>
     <% end %>
     <% if @item.next.present?%>
-    <%= link_to " 後ろの商品 ＞",item_path(@item.next), class: "change-item-btn" %>
+    <%= link_to " 前の商品 ＞",item_path(@item.next), class: "change-item-btn" %>
     <% end %>
   </div>
   <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
