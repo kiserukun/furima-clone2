@@ -25,7 +25,20 @@
           <li><%= link_to 'その他', category_path(10) %></li>
         </ul>
       </li>
-      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
+      <li>
+      <%= link_to 'ブランド', brands_path, class: "brand-list" %>
+      <ul>
+          <li><%= link_to 'シャネル', brand_name(2) %></li>
+          <li><%= link_to 'ナイキ', brand_path(3) %></li>
+          <li><%= link_to 'プーマ', brand_path(4) %></li>
+          <li><%= link_to 'グッチ', brand_path(5) %></li>
+          <li><%= link_to 'コロンビア', brand_path(6) %></li>
+          <li><%= link_to 'エルメス', brand_path(7) %></li>
+          <li><%= link_to 'アップル', brand_path(8) %></li>
+          <li><%= link_to 'ヤマハ', brand_path(9) %></li>
+          <li><%= link_to 'ブランド一覧', brand_path(10) %></li>
+        </ul>
+      </li>
     </ul>
     <% if user_signed_in? %>
       <ul class='lists-right'>
