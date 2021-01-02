@@ -96,8 +96,8 @@
     <% end %>
   </div>
   <% end %>
-  <% if @item.previous.present? %>
   <div class="links">
+    <% if @item.previous.present? %>
     <%= link_to "＜ 前の商品", item_path(@item.previous), class: "change-item-btn"%>
     <% end %>
     <% if @item.next.present?%>
