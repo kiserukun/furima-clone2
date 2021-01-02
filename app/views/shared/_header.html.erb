@@ -25,10 +25,7 @@
           <li><%= link_to 'その他', category_path(10) %></li>
         </ul>
       </li>
-      <li>
-      <%= link_to 'ブランド', brands_path, class: "brand-list" %>
-      
-      </li>
+      <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
     </ul>
     <% if user_signed_in? %>
       <ul class='lists-right'>
