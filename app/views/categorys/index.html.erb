@@ -1,0 +1,12 @@
+<%= render "shared/header" %>
+
+<div class='category-content'>
+  <h2 class='title'>カテゴリー一覧</h2>
+  <div class='category-nav'>
+    <% @categorys.each do |category| %>
+      <div class='category-link'>
+        <%=link_to category.name, category_path(category.id) %>
+      </div>
+    <% end %>
+  </div>
+</div>

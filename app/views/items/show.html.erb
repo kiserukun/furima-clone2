@@ -76,28 +76,33 @@
     </div>
   </div>
   <%# /商品の概要 %>
-
+<% if current_user.id == @item.user.id || @item.history != nil %>
   <div class="comment-box">
-    <form>
-      <textarea class="comment-text"></textarea>
+    <%= form_with(model: [@item, @comment], local: true) do |f| %>
+      <%= f.text_area :text, class:"comment-text", placeholder: "コメントする", rows: "2" %>
       <p class="comment-warn">
         相手のことを考え丁寧なコメントを心がけましょう。
         <br>
         不快な言葉遣いなどは利用制限や退会処分となることがあります。
       </p>
-      <button type="submit" class="comment-btn">
+      <%= f.button class:"comment-btn" do %>
         <%= image_tag "comment.png" ,class:"comment-flag-icon" ,width:"20",height:"25"%>
         <span>コメントする<span>
-      </button>
-    </form>
+      <% end %>
+    <% end %>
+    <% @comments.reverse.each do |comment|%>
+    <p><%= link_to comment.user.nickname, "#" %> :
+   <%= comment.text %></p>
+    <% end %>
   </div>
+  <% end %>
+  <% if @item.previous.present? %>
   <div class="links">
-    <a href="#" class="change-item-btn">
-      ＜ 前の商品
-    </a>
-    <a href="#" class="change-item-btn">
-      後ろの商品 ＞
-    </a>
+    <%= link_to "＜ 前の商品", item_path(@item.previous), class: "change-item-btn"%>
+    <% end %>
+    <% if @item.next.present?%>
+    <%= link_to " 後ろの商品 ＞",item_path(@item.next), class: "change-item-btn" %>
+    <% end %>
   </div>
   <a href="#" class='another-item'><%= @item.category.name %>をもっと見る</a>
 </div>
