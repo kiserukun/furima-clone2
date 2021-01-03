@@ -204,3 +204,10 @@
   font-weight: bold;
   font-size: 23px;
 }
+.comments-box{
+  display: flex;
+  justify-content: space-around;
+}
+.comment-txt{
+  display:inline-block;
+}

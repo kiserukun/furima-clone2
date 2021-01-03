@@ -90,12 +90,32 @@
         <span>コメントする<span>
       <% end %>
     <% end %>
+
+
+
+
+
+  
+  <div class="comments-box">
+  
     <% @comments.reverse.each do |comment|%>
-    <p><%= link_to comment.user.nickname, "#" %> :
-   <%= comment.text %></p>
+    <div class="comments-icon">
+    <%= link_to comment.user.nickname, "#" %> :
+    </div>
+    <div class="comment-txt">
+    <%= comment.text %>
+    </div>
     <% end %>
-  </div>
   <% end %>
+  </div>
+
+
+
+
+
+
+
+  </div>
   
   <div class="links">
     <% if @item.previous.present? %>
