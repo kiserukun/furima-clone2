@@ -14,15 +14,9 @@
       <li>
         <%= link_to 'カテゴリー', categorys_path, class: "category-list" %>
         <ul>
-          <li><%= link_to 'メンズ', category_path(2) %></li>
-          <li><%= link_to 'レディース', category_path(3) %></li>
-          <li><%= link_to '家電＆カメラ', category_path(4) %></li>
-          <li><%= link_to 'ホーム＆家電', category_path(5) %></li>
-          <li><%= link_to 'ペット用品', category_path(6) %></li>
-          <li><%= link_to 'おもちゃ＆ホビー', category_path(7) %></li>
-          <li><%= link_to 'スポーツ', category_path(8) %></li>
-          <li><%= link_to '楽器', category_path(9) %></li>
-          <li><%= link_to 'その他', category_path(10) %></li>
+          <% set_category.each do |category| %>
+            <li class='category-name'><%= link_to category.name, category_path(category.id) %></li>
+          <% end %>
         </ul>
       </li>
       <li><%= link_to 'ブランド', "#", class: "brand-list" %></li>
